@@ -14,7 +14,7 @@ public class CSVParseTest {
 
 	public CSVParseTest(String filename) throws IOException {
 		final File file = new File(filename);
-		final CSVFormat format = CSVFormat.newFormat('|');
+		final CSVFormat format = CSVFormat.newFormat('|').withHeader("name", "address", "age");
 		final Charset charset = Charset.defaultCharset();
 		final CSVParser parser = CSVParser.parse(file, charset, format);
 		final CSVMapper mapRecord = new CSVMapper();
